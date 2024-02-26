@@ -1,0 +1,44 @@
+[
+  {
+    "model": "materials.course",
+    "pk": 1,
+    "fields": {
+      "title": "1 курс",
+      "image": "",
+      "description": null
+    }
+  },
+  {
+    "model": "materials.lesson",
+    "pk": 1,
+    "fields": {
+      "title": "1 Урок",
+      "image": "",
+      "description": null,
+      "link": null,
+      "course": 1
+    }
+  },
+  {
+    "model": "materials.lesson",
+    "pk": 2,
+    "fields": {
+      "title": "2 урок",
+      "image": "",
+      "description": null,
+      "link": null,
+      "course": 1
+    }
+  },
+  {
+    "model": "materials.lesson",
+    "pk": 3,
+    "fields": {
+      "title": "3 урок",
+      "image": "",
+      "description": null,
+      "link": null,
+      "course": 1
+    }
+  }
+]

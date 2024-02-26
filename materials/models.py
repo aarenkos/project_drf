@@ -1,9 +1,11 @@
 from django.db import models
-from users.models import NULLABLE
+
+
+NULLABLE = {'blank': True, 'null': True}
 
 
 class Course(models.Model):
-    title = models.CharField(max_length=100, verbose_name='название курса')
+    title = models.CharField(max_length=120, verbose_name='название курса')
     image = models.ImageField(upload_to='courses/', verbose_name='превью курса', **NULLABLE)
     description = models.TextField(verbose_name='описание курса', **NULLABLE)
 
@@ -16,11 +18,11 @@ class Course(models.Model):
 
 
 class Lesson(models.Model):
-    title = models.CharField(max_length=100, verbose_name='название урока')
-    description = models.TextField(verbose_name='описание урока')
+    title = models.CharField(max_length=120, verbose_name='название урока')
+    description = models.TextField(verbose_name='описание урока', **NULLABLE)
     image = models.ImageField(upload_to='courses/lessons/', verbose_name='превью урока', **NULLABLE)
     link = models.URLField(verbose_name='ссылка на видео', **NULLABLE)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='lessons')
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name='курс')
 
     def __str__(self):
         return f"{self.course} - {self.title}"
